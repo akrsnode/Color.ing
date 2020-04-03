@@ -10,11 +10,13 @@
       In dapibus hendrerit elit, a commodo velit convallis eget.
       </p>
       <div class="socialbar">
-        <a id="item-left" href=""><img src="@/assets/mail.svg"></a>
-        <a id="item-right" href=""><img src="@/assets/git.svg"></a>
+        <a id="item-left" href="mailto:vansmoe@hotmail.com"><img src="@/assets/mail.svg"></a>
+        <a id="item-right" href="https://github.com/vansmoe"><img src="@/assets/git.svg"></a>
       </div>
     </div>
-    <div class="homeme" @click="$emit('closeAbout')">home</div>
+    <div class="homeme" @click="$emit('closeAbout')">
+      <span class="undrln">home</span>
+    </div>
   </div>
 </template>
 
@@ -25,14 +27,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$animate: all 0.2 ease-in-out;
+
 .boxwrapper {
   max-width: 400px;
   background-color: #FFF;
   font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 100px;
 
   @media (min-width: 401px) {
     background: #FFF;
     margin: 0 auto;
+    position: inherit;
   }
 }
 
@@ -43,11 +51,18 @@ export default {
   align-items: center;
   flex-direction: column;
   color: #707070;
-  margin: 150px 30px 0px 30px;
+  margin: 0px 30px;
 
+  @media (min-width: 401px) {
+    padding-top: 10vh;
+  }
+
+  @media (min-height: 800px) {
+    padding-top: 20vh;
+  }
   img {
     height: 40vw;
-    max-height: 250px;
+    max-height: 180px;
     align-self: flex-start;
   }
 
@@ -88,18 +103,42 @@ export default {
 }
 
 .homeme {
-  color: #707070;
-  font-weight: 200;
-  font-size: 15px;
+  width: 72px;
+  height: 20px;
   position: absolute;
   bottom: 0;
   right: 0;
   margin-bottom: 20px;
   margin-right: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  color: #707070;
 
+  .undrln {
+    transition: $animate;
+    position: absolute;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      width: 0px;
+      height: 1px;
+      transition: $animate;
+      transition-duration: 0.75s;
+      opacity: 0;
+      background-color: #707070;
+      left: 0;
+    }
+  }
   &:hover {
-    text-decoration: underline;
-    font-style: italic;
+    cursor: pointer;
+    .undrln {
+      &:before {
+        width: 100%;
+        opacity: 1;
+      }
+    }
   }
 }
 </style>

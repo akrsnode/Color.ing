@@ -15,6 +15,8 @@ export default {
 @import url('https://fonts.fontself.com/gE309jx/gilbert-color-bold-preview5.css');
 
 .logo {
+  width: 150px;
+  height: 95px;
   font-family: 'gilbert-color-bold-preview5';
   font-size: 50px;
   padding-left: 25px;

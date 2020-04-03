@@ -1,15 +1,41 @@
 <template>
   <div class="banner">
-    <div class="">Choose your own <input v-model="backgroundColor" placeholder="color" />.</div>
+    <div id="displayText">
+      {{ textDisplay }}
+      <input
+        type="text"
+        placeholder="color"
+        v-on:input="(event) => this.$emit('inputChange', event)">
+    .</div>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
+
+const textSample = ['It’s all about', 'I like this', 'What a gorgeous', 'The style is nice, but do you have it in a different'];
+const [textSample0, textSample1, textSample2, textSample3, textSample4] = textSample;
+let displayText = '';
+
+function chooseText() {
+  if (performance.navigation.type === 1) {
+    displayText = textSample[Math.floor(Math.random() * 4)];
+  } else {
+    displayText = textSample0;
+  }
+}
+chooseText();
+console.log(displayText);
+/* eslint-enable */
+
 export default {
   name: 'Home',
+  props: {
+    backgroundColor: String,
+  },
   data() {
     return {
-      backgroundColor: '',
+      textDisplay: displayText,
     };
   },
 };
