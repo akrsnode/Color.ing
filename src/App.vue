@@ -1,6 +1,6 @@
 <template>
-  <div id="app" onload="handleLoading()" :style="{ backgroundColor: value, color: value }">
-    <Logo :class="{ 'on-loading': loading === true}" />
+  <div id="app" :style="{ backgroundColor: value, color: value }">
+    <Logo v-if="loading === false" />
     <Loader v-if="loading === true" />
     <Home v-if="aboutOpen === false && loading === false" v-on:inputChange="handleChange" />
     <About v-if="aboutOpen" @closeAbout="aboutOpen = false" />
@@ -26,10 +26,14 @@ export default {
   },
   data() {
     return {
-      loading: false,
+      loading: true,
       aboutOpen: false,
       value: '',
     };
+  },
+  mounted() {
+    setTimeout(this.handleLoading, 2000);
+    console.log(this.loading);
   },
   methods: {
     handleAboutOpen() {
@@ -61,19 +65,14 @@ body {
   color: #FFF;
 }
 
-.on-loading {
-  margin: auto;
-  margin-top: 30%;
-}
-
 .about-btn {
   width: 72px;
   height: 20px;
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 200;

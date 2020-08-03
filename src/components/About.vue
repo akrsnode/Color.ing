@@ -4,13 +4,14 @@
       <img src="@/assets/profile.png">
       <h1>Hi, my name is Adrian.</h1>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Aenean a placerat nisi, sed scelerisque diam.
-      Phasellus non augue vel nisi elementum elementum.
-      In dapibus hendrerit elit, a commodo velit convallis eget.
+      Play with your color by typing them in the selected input.
+      Next features are planned in the future.
+      App made for fun. I hope you <span class="heart-txt">like it</span>.
+      Feel free to contact me using links below.
       </p>
       <div class="socialbar">
         <a id="item-left" href="mailto:vansmoe@hotmail.com"><img src="@/assets/mail.svg"></a>
+        <button id="item-center"><img src="@/assets/heart.svg"><span>+{{ likeNum }}</span></button>
         <a id="item-right" href="https://github.com/vansmoe"><img src="@/assets/git.svg"></a>
       </div>
     </div>
@@ -23,6 +24,11 @@
 <script>
 export default {
   name: 'About',
+  data() {
+    return {
+      likeNum: 10,
+    };
+  },
 };
 </script>
 
@@ -35,8 +41,8 @@ $animate: all 0.2 ease-in-out;
   font-family: 'Montserrat', sans-serif;
   position: absolute;
   bottom: 0;
-  padding-bottom: 100px;
-
+  padding-bottom: 20vh;
+  padding-top: 125px;
   @media (min-width: 401px) {
     background: #FFF;
     margin: 0 auto;
@@ -74,21 +80,30 @@ $animate: all 0.2 ease-in-out;
 
   p {
     font-weight: 200;
-
+    line-height: 1.5;
   }
+}
+
+.heart-txt {
+  color: #FF1754;
+  font-weight: 700;
 }
 
 .socialbar {
   display: grid;
   width: 100%;
   color: #707070;
-  grid-template-columns: 1fr 20px 50px 20px 1fr;
+  grid-template-columns: 1fr 24px 30px auto 30px 20px 1fr;
 
   #item-left {
     grid-column: 2 / span 1;
   }
 
   #item-right {
+    grid-column: 6 / span 1;
+  }
+
+  #item-center {
     grid-column: 4 / span 1;
   }
 
@@ -99,6 +114,11 @@ $animate: all 0.2 ease-in-out;
   img {
     height: 20px;
     width: auto;
+  }
+
+  button {
+    background: none;
+    border: none;
   }
 }
 

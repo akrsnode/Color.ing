@@ -1,5 +1,10 @@
 <template>
-  <div class="loader"><div></div><div></div><div></div><div></div></div>
+  <div class="load-page">
+    <img id="load-logo" src="@/assets/logo.svg">
+    <div class="loader">
+      <div></div><div></div><div></div><div></div>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -7,11 +12,24 @@ export default {
 };
 </script>
 <style scoped>
-.loader {
+.load-page {
   position: relative;
-  width: 80px;
+  width: 200px;
   height: 80px;
   margin: auto;
+  padding-top: 40vh;
+  display: flex;
+  flex-direction: column;
+}
+#load-logo {
+  width: 100%;
+  height: auto;
+}
+
+.loader {
+  width: 80px;
+  position: relative;
+  left: 60px;
 }
 .loader div {
   position: absolute;

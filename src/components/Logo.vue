@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div class="logo" href="">
     <div class="color">color</div>
     <div class="ing">ing</div>
   </div>
@@ -15,6 +15,7 @@ export default {
 @import url('https://fonts.fontself.com/gE309jx/gilbert-color-bold-preview5.css');
 
 .logo {
+  position: absolute;
   width: 150px;
   height: 95px;
   font-family: 'gilbert-color-bold-preview5';
