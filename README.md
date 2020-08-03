@@ -1,24 +1,9 @@
-# coloring
-
-## Project setup
+# Color.ing
+Play with your color by typing them in the selected input. 
+Next features are planned in the future. 
+App made for fun, with Vue.js
+## How to run?
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

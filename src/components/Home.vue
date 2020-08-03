@@ -48,23 +48,25 @@ export default {
   font-family: 'Playfair Display', serif;
   font-size: 60px;
   margin-left: 25px;
+  height: 100%;
+  padding-top: 15vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   flex-direction: row;
-  margin-top: 350px;
   -webkit-filter: invert(100%);
   filter: invert(100%);
 
   @media (min-width: 1024px) {
     margin-left: 100px;
-    font-size: 100px;
+    font-size: 80px;
   }
 
   input {
     font-family: 'Playfair Display', serif;
     font-size: 60px;
-    color:  #E7E7E7;
+    color: inherit;
     border: none;
+    outline: none;
     border-bottom: 4px solid #707070;
     background: none;
     max-width: 250px;
@@ -73,11 +75,11 @@ export default {
     @media (min-width: 1024px) {
       border-bottom: 6px solid #707070;
       max-width: 400px;
-      font-size: 100px;
+      font-size: 80px;
     }
   }
 }
-.banner:hover {
+.banner input:hover {
   opacity: 0.5;
 }
 
