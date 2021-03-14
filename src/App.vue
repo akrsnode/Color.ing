@@ -33,7 +33,6 @@ export default {
   },
   mounted() {
     setTimeout(this.handleLoading, 2000);
-    console.log(this.loading);
   },
   methods: {
     handleAboutOpen() {

@@ -10,8 +10,11 @@
       Feel free to contact me using links below.
       </p>
       <div class="socialbar">
-        <a id="item-left" href="mailto:vansmoe@hotmail.com"><img src="@/assets/mail.svg"></a>
-        <button id="item-center"><img src="@/assets/heart.svg"><span>+{{ likeNum }}</span></button>
+        <a id="item-left" href="mailto:hello@adriankrasno.pl"><img src="@/assets/mail.svg"></a>
+        <button id="item-center" @click="(() => likeNum++)">
+          <img src="@/assets/heart.svg">
+          <span>+{{ likeNum }}</span>
+        </button>
         <a id="item-right" href="https://github.com/vansmoe"><img src="@/assets/git.svg"></a>
       </div>
     </div>
